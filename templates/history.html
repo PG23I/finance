@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped" style="width:100%">
+        <tr>
+            <th>Transaction ID</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>Transaction Type</th>
+            <th>Time Stamp</th>
+        </tr>
+        {% for stock in stocks %}
+        <tr>
+            <td>{{stock.transaction_id}}</td>
+            <td>{{stock.stock_symbol}}</td>
+            <td>{{stock.price}}</td>
+            <td>{{stock.stock_number}}</td>
+            <td>{{stock.type}}</td>
+            <td>{{stock.timestamp}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}
